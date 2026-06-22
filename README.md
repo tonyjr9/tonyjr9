@@ -81,8 +81,8 @@ Laser engraving and materials fabrication projects in a research environment.
 ### GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true&rank_icon=github" height="150"/>
-  <img src="https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9" height="150"/>
+  <img src="./stats.svg" height="150"/>
+  <img src="./langs.svg" height="150"/>
 </p>
 
 <p align="center">
