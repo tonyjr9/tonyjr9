@@ -95,7 +95,7 @@ Laser engraving and materials fabrication projects in a research environment.
 - Rust systems programming
 - Kubernetes & advanced DevOps
 - Applying to **Master's programs** in CS / Network Engineering / Data Science
-- Physics simulation & scientific computing with Python
+- Physics simulation & scientific computing
 
 ---
 
