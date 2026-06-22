@@ -6,56 +6,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Generate GitHub Profile Summary Cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          node-version: '22'
-
-      - name: Install Playwright
-        run: |
-          npm init -y
-          npm install playwright
-          npx playwright install chromium --with-deps
-
-      - name: Screenshot stats cards
-        run: |
-          cat << 'EOF' > screenshot.mjs
-          import { chromium } from 'playwright';
-
-          const cards = [
-            {
-              url: 'https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true',
-              file: 'stats.png'
-            },
-            {
-              url: 'https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9',
-              file: 'langs.png'
-            }
-          ];
-
-          const browser = await chromium.launch();
-          for (const card of cards) {
-            const page = await browser.newPage();
-            await page.setViewportSize({ width: 500, height: 200 });
-            await page.goto(card.url, { waitUntil: 'networkidle' });
-            const el = await page.$('svg');
-            await el.screenshot({ path: card.file });
-            console.log(`Saved ${card.file}`);
-            await page.close();
-          }
-          await browser.close();
-          EOF
-          node screenshot.mjs
-
-      - name: Commit if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stats.png langs.png
-          git diff --staged --quiet || git commit -m "chore: update stats cards"
-          git push
+          USERNAME: tonyjr9
+          BRANCH_NAME: main

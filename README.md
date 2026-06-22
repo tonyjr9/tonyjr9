@@ -81,12 +81,19 @@ Laser engraving and materials fabrication projects in a research environment.
 ### GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats-fbr81npp5-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" height="150"/>
-  <img src="https://github-readme-stats-fbr81npp5-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9" height="150"/>
+  <img src="./profile-summary-card-output/tokyonight/0-profile-details.svg" />
+</p>
+<p align="center">
+  <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="49%"/>
+  <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%"/>
+</p>
+<p align="center">
+  <img src="./profile-summary-card-output/tokyonight/3-stats.svg" width="49%"/>
+  <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=tonyjr9&theme=tokyonight&hide_border=true" height="150"/>
+  <img src="https://streak-stats.demolab.com?user=tonyjr9&theme=tokyonight&hide_border=true" />
 </p>
 
 ---
