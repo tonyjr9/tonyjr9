@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -18,3 +20,112 @@ jobs:
         with:
           USERNAME: tonyjr9
           BRANCH_NAME: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate top-langs SVG
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cat << 'EOF' > gen-langs.mjs
+          import { execSync } from 'child_process';
+          import fs from 'fs';
+
+          const token = process.env.GITHUB_TOKEN;
+          const username = 'tonyjr9';
+
+          async function fetchJSON(url) {
+            const res = await fetch(url, {
+              headers: { Authorization: `Bearer ${token}`, 'User-Agent': 'langs-card' }
+            });
+            return res.json();
+          }
+
+          // Fetch all repos
+          let repos = [];
+          let page = 1;
+          while (true) {
+            const batch = await fetchJSON(`https://api.github.com/user/repos?per_page=100&page=${page}&affiliation=owner`);
+            if (!Array.isArray(batch) || batch.length === 0) break;
+            repos.push(...batch.filter(r => !r.fork));
+            page++;
+          }
+
+          // Fetch languages for each repo
+          const langBytes = {};
+          await Promise.all(repos.map(async repo => {
+            const langs = await fetchJSON(repo.languages_url);
+            for (const [lang, bytes] of Object.entries(langs)) {
+              langBytes[lang] = (langBytes[lang] || 0) + bytes;
+            }
+          }));
+
+          // Sort and take top 10
+          const total = Object.values(langBytes).reduce((a, b) => a + b, 0);
+          const sorted = Object.entries(langBytes)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 10);
+
+          // Tokyonight palette
+          const colors = [
+            '#7aa2f7','#bb9af7','#7dcfff','#9ece6a','#ff9e64',
+            '#f7768e','#2ac3de','#e0af68','#a9b1d6','#cfc9c2'
+          ];
+
+          const W = 495, PADDING = 25, BAR_H = 8, ROW_H = 28;
+          const cols = 2, rows = Math.ceil(sorted.length / cols);
+          const colW = (W - PADDING * 2) / cols;
+          const bodyH = rows * ROW_H + 20;
+          const H = 50 + bodyH + PADDING;
+
+          let bars = '';
+          let labels = '';
+          let x = 0;
+          const barY = H - PADDING - BAR_H - 2;
+          const barW = W - PADDING * 2;
+
+          // Progress bar
+          sorted.forEach(([lang, bytes], i) => {
+            const pct = bytes / total;
+            const w = Math.max(pct * barW, 1);
+            bars += `<rect x="${PADDING + x}" y="${barY}" width="${w}" height="${BAR_H}" rx="4" fill="${colors[i % colors.length]}"/>`;
+            x += w;
+          });
+
+          // Legend grid
+          sorted.forEach(([lang, bytes], i) => {
+            const pct = (bytes / total * 100).toFixed(1);
+            const col = i % cols;
+            const row = Math.floor(i / cols);
+            const lx = PADDING + col * colW;
+            const ly = 50 + row * ROW_H;
+            labels += `
+              <circle cx="${lx + 6}" cy="${ly + 6}" r="5" fill="${colors[i % colors.length]}"/>
+              <text x="${lx + 18}" y="${ly + 11}" fill="#a9b1d6" font-size="12" font-family="'Segoe UI',sans-serif">${lang}</text>
+              <text x="${lx + colW - 10}" y="${ly + 11}" fill="#7aa2f7" font-size="12" font-family="'Segoe UI',sans-serif" text-anchor="end">${pct}%</text>
+            `;
+          });
+
+          const svg = `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg">
+            <rect width="${W}" height="${H}" rx="10" fill="#1a1b2e"/>
+            <text x="${PADDING}" y="32" fill="#c0caf5" font-size="16" font-weight="bold" font-family="'Segoe UI',sans-serif">Most Used Languages</text>
+            ${labels}
+            ${bars}
+          </svg>`;
+
+          fs.writeFileSync('top-langs.svg', svg);
+          console.log('Generated top-langs.svg with', sorted.length, 'languages');
+          EOF
+          node gen-langs.mjs
+
+      - name: Commit top-langs card
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add top-langs.svg
+          git diff --staged --quiet || git commit -m "chore: update top-langs card"
+          git push

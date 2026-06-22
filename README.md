@@ -85,7 +85,7 @@ Laser engraving and materials fabrication projects in a research environment.
 </p>
 <p align="center">
   <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="49%"/>
-  <img src="./profile-summary-card-output/tokyonight/2-most-commit-language.svg" width="49%"/>
+  <img src="./top-langs.svg" width="49%"/>
 </p>
 <p align="center">
   <img src="./profile-summary-card-output/tokyonight/3-stats.svg" width="49%"/>
