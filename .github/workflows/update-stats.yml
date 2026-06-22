@@ -11,15 +11,46 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install rsvg-convert
-        run: sudo apt-get install -y librsvg2-bin
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      - name: Fetch and convert stats cards
+      - name: Install Playwright
         run: |
-          curl -sL "https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" -o stats_raw.svg
-          curl -sL "https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9" -o langs_raw.svg
-          rsvg-convert -f png -o stats.png stats_raw.svg
-          rsvg-convert -f png -o langs.png langs_raw.svg
+          npm init -y
+          npm install playwright
+          npx playwright install chromium --with-deps
+
+      - name: Screenshot stats cards
+        run: |
+          cat << 'EOF' > screenshot.mjs
+          import { chromium } from 'playwright';
+
+          const cards = [
+            {
+              url: 'https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true',
+              file: 'stats.png'
+            },
+            {
+              url: 'https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9',
+              file: 'langs.png'
+            }
+          ];
+
+          const browser = await chromium.launch();
+          for (const card of cards) {
+            const page = await browser.newPage();
+            await page.setViewportSize({ width: 500, height: 200 });
+            await page.goto(card.url, { waitUntil: 'networkidle' });
+            const el = await page.$('svg');
+            await el.screenshot({ path: card.file });
+            console.log(`Saved ${card.file}`);
+            await page.close();
+          }
+          await browser.close();
+          EOF
+          node screenshot.mjs
 
       - name: Commit if changed
         run: |
