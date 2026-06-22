@@ -96,6 +96,7 @@ Laser engraving and materials fabrication projects in a research environment.
   <img src="https://streak-stats.demolab.com?user=tonyjr9&theme=tokyonight&hide_border=true" />
 </p>
 
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=tonyjr9)](https://github.com/anuraghazra/github-readme-stats)
 ---
 
 ### Currently Exploring
