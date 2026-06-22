@@ -49,6 +49,7 @@
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
 **DevOps & Infrastructure**
@@ -72,7 +73,7 @@
 
 ### Experience
 
-**Research Intern (PEEC) — INESC TEC** *(Applied Optics & Photonics Lab, FCUP)*
+**Research Intern (PEEC) — INESC TEC** *(Applied Optics & Photonics Lab, FCUP)*  
 Laser engraving and materials fabrication projects in a research environment.
 
 ---
@@ -80,8 +81,8 @@ Laser engraving and materials fabrication projects in a research environment.
 ### GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=1800" height="150"/>
-  <img src="https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=8&cache_seconds=1800" height="150"/>
+  <img src="https://github-readme-stats-topedro.vercel.app/api?username=tonyjr9&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" height="150"/>
+  <img src="https://github-readme-stats-topedro.vercel.app/api/top-langs/?username=tonyjr9&layout=compact&theme=tokyonight&hide_border=true&count_private=true&langs_count=9" height="150"/>
 </p>
 
 <p align="center">
@@ -95,7 +96,7 @@ Laser engraving and materials fabrication projects in a research environment.
 - Rust systems programming
 - Kubernetes & advanced DevOps
 - Applying to **Master's programs** in CS / Network Engineering / Data Science
-- Physics simulation & scientific computing
+- Physics simulation & scientific computing with Python
 
 ---
 
