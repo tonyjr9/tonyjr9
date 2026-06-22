@@ -83,21 +83,9 @@ Laser engraving and materials fabrication projects in a research environment.
 <p align="center">
   <img src="./profile-summary-card-output/tokyonight/0-profile-details.svg" />
 </p>
-<p align="center">
-  <img src="./profile-summary-card-output/tokyonight/1-repos-per-language.svg" width="49%"/>
-  <img src="./top-langs.svg" width="49%"/>
-</p>
-<p align="center">
-  <img src="./profile-summary-card-output/tokyonight/3-stats.svg" width="49%"/>
-  <img src="./profile-summary-card-output/tokyonight/4-productive-time.svg" width="49%"/>
-</p>
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=tonyjr9&theme=tokyonight&hide_border=true" />
-</p>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=tonyjr9)](https://github.com/anuraghazra/github-readme-stats)
----
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&size_weight=0.5&count_weight=0.5)---
 
 ### Currently Exploring
 
