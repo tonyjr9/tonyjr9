@@ -1,7 +1,7 @@
-<h1 align="center">Hey, I'm António Lanção 👋</h1>
+<h1 align="center">Hey, I'm António Lanção </h1>
 
 <p align="center">
-  Physics graduate (FCUP) · CS & Full-Stack Developer · Homelab enthusiast · Porto, PT 🇵🇹
+  Physics graduate (FCUP) · CS · Homelab enthusiast · Porto, PT 🇵🇹
 </p>
 
 <p align="center">
@@ -14,12 +14,13 @@
 
 ### About Me
 
-- BSc in **Physics** (Faculty of Sciences, University of Porto) — now diving deeper into **Computer Science**
-- Building full-stack web apps with **Spring Boot**, **React**, and **TypeScript**
-- Research intern **(PEEC) @ INESC TEC** — Applied Optics & Photonics lab, laser engraving & fabrication
+- BSc in **Physics** (Faculty of Sciences, University of Porto)
+- Ongoing **Master's programs** in CS
+- Built full-stack web app with **React**.
+- Research intern **(PEEC) @ INESC TEC** - Applied Optics & Photonics lab, laser engraving & fabrication
 - Running a self-hosted **homelab** on Debian: Plex, Jellyfin, Seafile, Home Assistant, Pi-hole, OpenVPN & more
-- Learning **Rust** — slowly but surely
-- Java game dev, 3D printing & laser engraving on the side
+- Learning **Rust**
+- Java, 3D printing & laser engraving on the side
 
 ---
 
@@ -31,11 +32,10 @@
 ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
 ![Haskell](https://img.shields.io/badge/Haskell-5D4F85?style=flat-square&logo=haskell&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)2
+![Shell](https://img.shields.io/badge/Shell-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![Shell](https://img.shields.io/badge/Shell-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
 
 **Scientific Computing & Data**
 
@@ -49,7 +49,6 @@
 
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 
 **DevOps & Infrastructure**
@@ -90,9 +89,7 @@ Laser engraving and materials fabrication projects in a research environment.
 
 ### Currently Exploring
 
-- Rust systems programming
-- Kubernetes & advanced DevOps
-- Applying to **Master's programs** in CS / Network Engineering / Data Science
+- Rust
 - Physics simulation & scientific computing with Python
 
 ---
