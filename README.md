@@ -1,13 +1,7 @@
 <h1 align="center">Hey, I'm António Lanção </h1>
 
 <p align="center">
-  Physics graduate (FCUP) · CS · Homelab enthusiast · Porto, PT 🇵🇹
-</p>
-
-<p align="center">
-  <a href="https://github.com/tonyjr9">
-    <img src="https://komarev.com/ghpvc/?username=tonyjr9&color=blueviolet&style=flat-square" alt="profile views"/>
-  </a>
+  Physics graduate (FCUP) · Ongoing MSc in Computer Science · Homelab enthusiast · Porto, PT 🇵🇹
 </p>
 
 ---
