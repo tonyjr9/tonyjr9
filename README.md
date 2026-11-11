@@ -16,11 +16,11 @@
 
 - BSc in **Physics** (Faculty of Sciences, University of Porto)
 - Ongoing **Master's programs** in CS
-- Built full-stack web app with **React**.
-- Research intern **(PEEC) @ INESC TEC** - Applied Optics & Photonics lab, laser engraving & fabrication
+- Built full-stack web app with **Vite**, Go, sql and docker.
+- Former Research intern **(PEEC) @ INESC TEC** - Applied Optics & Photonics lab, laser engraving & fabrication
 - Running a self-hosted **homelab** on Debian: Plex, Jellyfin, Seafile, Home Assistant, Pi-hole, OpenVPN & more
 - Learning **Rust**
-- Java, 3D printing & laser engraving on the side
+- Hobbies: Musician (guitar, mandolin, bass, cavaco and keyboard), Gaming and 3D printing.
 
 ---
 
@@ -56,8 +56,8 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 ![Debian](https://img.shields.io/badge/Debian-A81D33?style=flat-square&logo=debian&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
 ![Neovim](https://img.shields.io/badge/Neovim-57A143?style=flat-square&logo=neovim&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
 
 ---
 
@@ -74,15 +74,6 @@
 
 **Research Intern (PEEC) — INESC TEC** *(Applied Optics & Photonics Lab, FCUP)*  
 Laser engraving and materials fabrication projects in a research environment.
-
----
-
-### GitHub Stats
-
-<p align="center">
-  <img src="./profile-summary-card-output/tokyonight/0-profile-details.svg" />
-</p>
-
 
 ---
 
